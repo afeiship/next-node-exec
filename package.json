@@ -1,7 +1,7 @@
 {
   "name": "next-node-exec",
   "version": "1.0.0",
-  "description": "Node exec for next",
+  "description": "Node exec for next.",
   "homepage": "https://github.com/afeiship/next-node-exec",
   "author": {
     "name": "afei",
