@@ -4,6 +4,7 @@
   var exec = require('child_process').exec;
 
   // https://www.gulpjs.com.cn/docs/api/
+  // https://gist.github.com/millermedeiros/4724047
   nx.nodeExec = function(inOptions) {
     return new Promise(function(resolve, reject) {
       exec(inOptions, function(err) {
