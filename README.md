@@ -3,14 +3,12 @@
 
 ## installation
 ```bash
-npm install -S afeiship/next-node-exec --registry=https://registry.npm.taobao.org
+npm install -S @feizheng/next-node-exec
 ```
 
 ## usage
 ```js
-import 'next-node-exec';
+import '@feizheng/next-node-exec';
 
-nx.nodeExec('npm run build').then((response) => {
-  console.log('do what you want');
-});
+//DOCS here!
 ```

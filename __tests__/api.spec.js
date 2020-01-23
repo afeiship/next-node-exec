@@ -1,5 +1,5 @@
-var nx = require('next-js-core2');
-var fs = require('fs');
+const nx = require('@feizheng/next-js-core2');
+const fs = require('fs');
 require('../src/next-node-exec');
 
 describe('Basic test', () => {
