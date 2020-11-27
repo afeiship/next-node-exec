@@ -9,8 +9,9 @@
   nx.nodeExec = function (inCmds, inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
     var cmds = Array.isArray(inCmds) ? inCmds : [inCmds];
-    var res = exec(cmds.join(options.joined));
-    options.debug && console.log('[debug]:', cmds);
+    var command = cmds.join(options.joined);
+    var res = exec(command);
+    options.debug && console.log('[debug]:', command);
     if (res) {
       var str = res.toString().trim();
       switch (options.responseType) {
