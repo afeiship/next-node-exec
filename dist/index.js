@@ -2,8 +2,8 @@
  * name: @jswork/next-node-exec
  * description: Node exec for next.
  * homepage: https://github.com/afeiship/next-node-exec
- * version: 1.0.3
- * date: 2020-11-27 13:28:09
+ * version: 1.0.4
+ * date: 2020-11-27 13:28:54
  * license: MIT
  */
 
