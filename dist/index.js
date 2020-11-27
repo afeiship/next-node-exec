@@ -3,7 +3,7 @@
  * description: Node exec for next.
  * homepage: https://github.com/afeiship/next-node-exec
  * version: 1.0.3
- * date: 2020-11-27 13:17:24
+ * date: 2020-11-27 13:28:09
  * license: MIT
  */
 
@@ -12,6 +12,8 @@
   var nx = global.nx || require('@jswork/next');
   var exec = require('child_process').execSync;
   var DEFAULT_OPTIONS = { responseType: 'string', joined: '&&', debug: false };
+  /* prettier-ignore */
+  var trim = function (value) { return value.trim(); };
 
   // https://www.gulpjs.com.cn/docs/api/
   // https://gist.github.com/millermedeiros/4724047
@@ -27,7 +29,7 @@
         case 'buffer':
           return res;
         case 'array':
-          return str.split('\n');
+          return str.split('\n').filter(trim).filter(Boolean);
         default:
           return str;
       }
