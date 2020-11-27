@@ -1,17 +1,25 @@
 (function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@jswork/next');
-  var exec = require('child_process').exec;
+  var exec = require('child_process').execSync;
+  var DEFAULT_OPTIONS = { responseType: 'string', series: true };
 
   // https://www.gulpjs.com.cn/docs/api/
   // https://gist.github.com/millermedeiros/4724047
-  nx.nodeExec = function (inOptions) {
-    return new Promise(function (resolve, reject) {
-      exec(inOptions, function (err) {
-        if (err) return reject(err);
-        resolve();
-      });
-    });
+  nx.nodeExec = function (inCmds, inOptions) {
+    var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
+    var cmds = Array.isArray(inCmds) ? inCmds : [inCmds];
+    var joined = options.series ? '&&' : '&';
+    var res = exec(cmds.join(joined));
+    if (res) {
+      switch (options.responseType) {
+        case 'buffer':
+          return res;
+        default:
+          return res.toString().trim();
+      }
+    }
+    return null;
   };
 
   if (typeof module !== 'undefined' && module.exports) {

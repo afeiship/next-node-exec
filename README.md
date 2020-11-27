@@ -15,9 +15,14 @@ npm install -S @jswork/next-node-exec
 ```js
 import '@jswork/next-node-exec';
 
-nx.nodeExec('npm run build').then(res=>{
-  console.log(res);
-});
+// single cmd;
+nx.nodeExec('npm run build');
+
+// multiple cmds:
+nx.nodeExec([
+  'ls -alh',
+  'pwd'
+]);
 ```
 
 ## license
