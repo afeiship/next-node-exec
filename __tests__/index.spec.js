@@ -6,7 +6,7 @@
   describe('api.basic test', () => {
     test('build task will create dist dir', function () {
       var hasDist = false;
-      var res = nx.nodeExec('npm run build');
+      nx.nodeExec('npm run build');
       hasDist = fs.existsSync('dist');
       expect(hasDist).toBe(true);
     });
