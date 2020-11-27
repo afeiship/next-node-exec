@@ -18,7 +18,10 @@
         case 'buffer':
           return res;
         case 'array':
-          return str.split('\n');
+          return str
+            .split('\n')
+            .filter((item) => item.trim())
+            .filter(Boolean);
         default:
           return str;
       }
