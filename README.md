@@ -33,6 +33,13 @@ nx.nodeExec([
 //cmds: tail access.log -n 1000 | awk '{print $1}'
 ```
 
+## options
+| name         | type    | default            | description                    |
+| ------------ | ------- | ------------------ | ------------------------------ |
+| responseType | string  | string/buffer/null | Return string with trim.       |
+| joined       | string  | `&&`/`&`/`|`       | Joined with char.              |
+| debug        | boolean | true/false         | If show the executed commands. |
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-node-exec/blob/master/LICENSE.txt).
 

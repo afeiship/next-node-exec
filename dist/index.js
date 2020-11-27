@@ -3,7 +3,7 @@
  * description: Node exec for next.
  * homepage: https://github.com/afeiship/next-node-exec
  * version: 1.0.1
- * date: 2020-11-27 11:34:21
+ * date: 2020-11-27 11:37:54
  * license: MIT
  */
 
@@ -19,13 +19,16 @@
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
     var cmds = Array.isArray(inCmds) ? inCmds : [inCmds];
     var res = exec(cmds.join(options.joined));
-    options.debug && console.log('[debug]:', cmds)
+    options.debug && console.log('[debug]:', cmds);
     if (res) {
+      var str = res.toString().trim();
       switch (options.responseType) {
         case 'buffer':
           return res;
+        case 'array':
+          return str.split('\n');
         default:
-          return res.toString().trim();
+          return str;
       }
     }
     return null;

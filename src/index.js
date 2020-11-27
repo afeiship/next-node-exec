@@ -10,13 +10,16 @@
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
     var cmds = Array.isArray(inCmds) ? inCmds : [inCmds];
     var res = exec(cmds.join(options.joined));
-    options.debug && console.log('[debug]:', cmds)
+    options.debug && console.log('[debug]:', cmds);
     if (res) {
+      var str = res.toString().trim();
       switch (options.responseType) {
         case 'buffer':
           return res;
+        case 'array':
+          return str.split('\n');
         default:
-          return res.toString().trim();
+          return str;
       }
     }
     return null;
