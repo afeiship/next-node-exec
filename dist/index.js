@@ -2,8 +2,8 @@
  * name: @jswork/next-node-exec
  * description: Node exec for next.
  * homepage: https://github.com/afeiship/next-node-exec
- * version: 1.0.2
- * date: 2020-11-27 11:38:39
+ * version: 1.0.3
+ * date: 2020-11-27 13:17:24
  * license: MIT
  */
 
@@ -18,8 +18,9 @@
   nx.nodeExec = function (inCmds, inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
     var cmds = Array.isArray(inCmds) ? inCmds : [inCmds];
-    var res = exec(cmds.join(options.joined));
-    options.debug && console.log('[debug]:', cmds);
+    var command = cmds.join(options.joined);
+    var res = exec(command);
+    options.debug && console.log('[debug]:', command);
     if (res) {
       var str = res.toString().trim();
       switch (options.responseType) {

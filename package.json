@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-node-exec",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node exec for next.",
   "homepage": "https://github.com/afeiship/next-node-exec",
   "author": {
