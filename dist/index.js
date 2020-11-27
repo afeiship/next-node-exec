@@ -1,3 +1,12 @@
+/*!
+ * name: @jswork/next-node-exec
+ * description: Node exec for next.
+ * homepage: https://github.com/afeiship/next-node-exec
+ * version: 1.0.1
+ * date: 2020-11-27 11:34:21
+ * license: MIT
+ */
+
 (function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@jswork/next');

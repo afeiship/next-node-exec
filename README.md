@@ -23,6 +23,14 @@ nx.nodeExec([
   'ls -alh',
   'pwd'
 ]);
+
+// or with pip cmds
+nx.nodeExec([
+  'tail access.log -n 1000',
+  `awk '{print $1}'`
+], { joined: '|'});
+
+//cmds: tail access.log -n 1000 | awk '{print $1}'
 ```
 
 ## license
