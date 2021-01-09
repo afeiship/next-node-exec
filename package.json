@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-node-exec",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Node exec for next.",
   "homepage": "https://github.com/afeiship/next-node-exec",
   "author": {
@@ -40,6 +40,14 @@
   "keywords": [
     "next",
     "node",
-    "exec"
+    "exec",
+    "cmd",
+    "exec-sync",
+    "sync",
+    "multiple",
+    "response-type",
+    "array",
+    "string",
+    "trim"
   ]
 }
